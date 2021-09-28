@@ -8,35 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var heartBadgeSeen = false
     
     var body: some View {
-        TabView {
-            Color.red
-                .tabItem {
-                    Image(systemName: "house.fill")
-                }
-            // Badges
-                .badge("10")
-            
-            Color.green
-                .onAppear(perform: {
-                    heartBadgeSeen.toggle()
-                })
-                .tabItem {
-                    Image(systemName: "suit.heart.fill")
-                }
-            // String is showing empty circle
-            // Maybe it will get updated
-            // But Int is working
-            //                .badge(heartBadgeSeen ? "" : "New")
-                .badge(heartBadgeSeen ? 0 : 20)
-            
-            Color.yellow
-                .tabItem {
-                    Image(systemName: "gearshape")
-                }
+        NavigationView {
+            VStack {
+                Text("OnTrigger")
+                // Also be used with TextField
+                TextField("Type here", text: .constant(""))
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+            }
+            .searchable(text: .constant(""))
+            .navigationTitle("Home")
         }
+        .onSubmit(of: [.search, .text], {
+            print("Field summitted!")
+        })
     }
 }
 

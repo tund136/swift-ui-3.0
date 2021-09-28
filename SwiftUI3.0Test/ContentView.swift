@@ -14,12 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(users) { user in
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(user.name)
-                    
-                    Text(user.email)
-                        .font(.caption)
+            // Maybe bug only working with for each
+            List {
+                ForEach(users) { user in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(user.name)
+                        
+                        Text(user.email)
+                            .font(.caption)
+                    }
+                    // Row separator customization
+                    .listRowSeparatorTint(.red)
+                    // Hiding line
+                    .listRowSeparator(.hidden)
                 }
             }
             // Adding Refresh Control

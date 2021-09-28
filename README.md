@@ -14,3 +14,6 @@ Using Async Image we can fetch and display images from the internet using image 
 
 ### 5. Material
 A Material is the same as the UIVisualEffect view from the UI Kit.
+
+### 6. Badge
+A badge can only be used in the Tab View. It display's Badge count on tab item

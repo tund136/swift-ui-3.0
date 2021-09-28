@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let url = URL(string: "https://jsonplaceholder.typicode.com/users")!
     @State private var users: [User] = []
+    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
@@ -26,6 +27,19 @@ struct ContentView: View {
             .refreshable {
                 await fetchUsers()
             }
+            // Adding Search Bar
+            // Note: Only available with Navigation View
+            .searchable(text: $searchText, prompt: "Search User", suggestions: {
+                // Suggetions
+                // List of filtered content showed in a list format when search field is active
+                ForEach(users.filter { user in
+                    searchText == "" ? true : user.email.lowercased().contains(searchText.lowercased())
+                }) { user in
+                    Text(user.email)
+                    // We can even auto complete the text when its tapped
+                        .searchCompletion(user.name)
+                }
+            })
             .navigationTitle("Pull to Refresh")
         }
     }

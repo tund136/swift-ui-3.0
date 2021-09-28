@@ -11,3 +11,6 @@ Customisation
 
 ### 4. Async Image
 Using Async Image we can fetch and display images from the internet using image URL.
+
+### 5. Material
+A Material is the same as the UIVisualEffect view from the UI Kit.

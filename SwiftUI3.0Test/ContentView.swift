@@ -19,6 +19,16 @@ struct ContentView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .frame(width: 300)
+                        // Blur effects
+                        // aka UIVisualEffect View
+                        // We can directly apply shapes in overlay or background
+                        // .ultraThinMaterial
+                        // .regularMaterial
+                        // .thinMaterial
+                        // .thickMaterial
+                        // .ultraThickMaterial
+                            .overlay(.ultraThickMaterial, in: RoundedRectangle(cornerRadius: 10))
                     } else {
                         // Error or loading
                         Image(systemName: "house.fill")

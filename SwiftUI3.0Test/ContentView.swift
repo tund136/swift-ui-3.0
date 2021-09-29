@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var show = false
-    
     var body: some View {
-        VStack {
-            Button("Show Sheet") {
-                show.toggle()
+        List {
+            ForEach(1...20, id: \.self) { index in
+                Text("User Task \(index)")
+                // Swipe Actions
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "house.fill")
+                        })
+                        // Changing background color
+                            .tint(.green)
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "gearshape")
+                        })
+                        // Changing background color
+                            .tint(.blue)
+                    }
+                
+                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "photo")
+                        })
+                        // Changing background color
+                            .tint(.yellow)
+                    }
             }
-        }
-        .sheet(isPresented: $show) {
-            Text("I'm a Sheet View!")
-            // Disabling Gesture Dismiss
-            // Note: Using this in Sheet Content
-                .interactiveDismissDisabled(true)
         }
     }
 }

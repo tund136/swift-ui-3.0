@@ -26,3 +26,6 @@ A new view that is displayed above, below, leading or trailing of the content vi
 
 ### 9. Customization for Sheet Dismiss
 Until iOS 14 a Sheet can also be dismissed when it is swiped down, whereas here we can avoid that by using InteractiveDismissDisable.
+
+### 10. Swipe Actions
+A Swipe Action is only available for the List View. It performs certain actions when List Row swiped in the desired direction.

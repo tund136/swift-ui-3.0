@@ -32,3 +32,6 @@ A Swipe Action is only available for the List View. It performs certain actions 
 
 ### 11. App Storage Raw Representable
 Using App Storage Raw Representable now we can also store enum in the App Storage.
+
+### 12. Keyboard "Done" Alternative
+Instead of using the "Done" button on the keyboard, we can add a custom button like "Search", "Go", etc.,

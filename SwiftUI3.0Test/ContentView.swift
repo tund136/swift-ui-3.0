@@ -11,17 +11,11 @@ struct ContentView: View {
     @AppStorage("deviceType") var device: Device?
     
     var body: some View {
-        VStack {
-            if let deviceType = device {
-                Text(deviceType.rawValue)
-            }
-            
-            Button(action: {
-                device = .iPhone12
-            }, label: {
-                Text("Select iPhone 12")
-            })
-        }
+        // Keyboard Done button alternatives
+        TextField("iJustine", text: .constant(""))
+            .textFieldStyle(.roundedBorder)
+            .submitLabel(.join)
+            .padding()
     }
 }
 

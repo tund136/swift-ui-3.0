@@ -35,3 +35,6 @@ Using App Storage Raw Representable now we can also store enum in the App Storag
 
 ### 12. Keyboard "Done" Alternative
 Instead of using the "Done" button on the keyboard, we can add a custom button like "Search", "Go", etc.,
+
+### 13. Canvas
+A Canvas is used to draw using GraphicsContext.

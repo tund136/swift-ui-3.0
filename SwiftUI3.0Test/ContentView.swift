@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("deviceType") var device: Device?
-    
     var body: some View {
-        // Keyboard Done button alternatives
-        TextField("iJustine", text: .constant(""))
-            .textFieldStyle(.roundedBorder)
-            .submitLabel(.join)
-            .padding()
+        VStack {
+            // We can draw using Graphics Context
+            // from Core Graphics
+            Canvas { context, size in
+                context.draw(Text("Hello"), at: CGPoint(x: size.width / 2, y: size.height / 2))
+                
+                context.draw(Image(systemName: "house.fill"), at: CGPoint(x: size.width / 2, y: size.height / 1.5))
+            }
+            .frame(width: 300, height: 300)
+            .background(Color.green, in: RoundedRectangle(cornerRadius: 10))
+        }
     }
-}
-
-// Storing Enum in App Storage
-enum Device: String {
-    case iPhone8 = "8"
-    case iPhone11 = "11"
-    case iPhone12 = "12"
 }
 
 struct ContentView_Previews: PreviewProvider {

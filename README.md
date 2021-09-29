@@ -20,3 +20,6 @@ A badge can only be used in the Tab View. It display's Badge count on tab item
 
 ### 7. On Submit
 OnSubmit will fire the action block when a search field or a Text Field is Submitted.
+
+### 8. SafeAreaInsect
+A new view that is displayed above, below, leading or trailing of the content view, making space for the content view either horizontally or vertical.

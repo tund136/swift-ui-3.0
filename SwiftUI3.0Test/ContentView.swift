@@ -10,20 +10,36 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("OnTrigger")
-                // Also be used with TextField
-                TextField("Type here", text: .constant(""))
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
+        ScrollView {
+            VStack(spacing: 18) {
+                ForEach(1...25, id: \.self) { _ in
+                    HStack {
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 45, height: 45)
+                        
+                        VStack(alignment: .leading, spacing: 15) {
+                            Rectangle()
+                                .fill(Color.gray)
+                                .frame(height: 15)
+                            
+                            Rectangle()
+                                .fill(Color.gray)
+                                .frame(height: 15)
+                                .padding(.trailing, 50)
+                        }
+                    }
+                }
             }
-            .searchable(text: .constant(""))
-            .navigationTitle("Home")
+            .padding()
         }
-        .onSubmit(of: [.search, .text], {
-            print("Field summitted!")
-        })
+        .safeAreaInset(edge: .bottom) {
+            // It will automatically add padding for the main content
+            Capsule()
+                .fill(Color.red)
+                .frame(height: 55)
+                .padding(.horizontal)
+        }
     }
 }
 

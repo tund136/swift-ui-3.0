@@ -29,3 +29,6 @@ Until iOS 14 a Sheet can also be dismissed when it is swiped down, whereas here 
 
 ### 10. Swipe Actions
 A Swipe Action is only available for the List View. It performs certain actions when List Row swiped in the desired direction.
+
+### 11. App Storage Raw Representable
+Using App Storage Raw Representable now we can also store enum in the App Storage.

@@ -8,41 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("deviceType") var device: Device?
+    
     var body: some View {
-        List {
-            ForEach(1...20, id: \.self) { index in
-                Text("User Task \(index)")
-                // Swipe Actions
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "house.fill")
-                        })
-                        // Changing background color
-                            .tint(.green)
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "gearshape")
-                        })
-                        // Changing background color
-                            .tint(.blue)
-                    }
-                
-                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "photo")
-                        })
-                        // Changing background color
-                            .tint(.yellow)
-                    }
+        VStack {
+            if let deviceType = device {
+                Text(deviceType.rawValue)
             }
+            
+            Button(action: {
+                device = .iPhone12
+            }, label: {
+                Text("Select iPhone 12")
+            })
         }
     }
+}
+
+// Storing Enum in App Storage
+enum Device: String {
+    case iPhone8 = "8"
+    case iPhone11 = "11"
+    case iPhone12 = "12"
 }
 
 struct ContentView_Previews: PreviewProvider {

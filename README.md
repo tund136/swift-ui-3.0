@@ -23,3 +23,6 @@ OnSubmit will fire the action block when a search field or a Text Field is Submi
 
 ### 8. SafeAreaInsect
 A new view that is displayed above, below, leading or trailing of the content view, making space for the content view either horizontally or vertical.
+
+### 9. Customization for Sheet Dismiss
+Until iOS 14 a Sheet can also be dismissed when it is swiped down, whereas here we can avoid that by using InteractiveDismissDisable.
